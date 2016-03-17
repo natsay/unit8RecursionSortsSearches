@@ -8,28 +8,22 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 public class FractalTreePanel extends JPanel
 { 
-    private int maxAngle=180; 
-    private int startAngle=0; 
-    private int pointX=600; 
-    private int pointY=600; 
-    private int branches=3; 
-    private double treeSize=2; 
-    private int numRecurs=5; 
+    private final int HEIGHT= 1200
+    private final int WIDTH=800;
+    private final int ANGLE=  Math.PI/4;
+    private final double Detail=.50 
+    private int currentOrder=;
     
    
-    public FractalTree()
+    public FractalTree(int currOrder)
     {
-        this.maxAngle= maxAngle; 
-        this.startAngle=startAngle; 
-        this.pointX=pX; 
-        this.pointY=py\Y; 
-        this.branches=branches; 
-        this.treeSize= size; 
-        this.numRecurs=nRecurs; 
+        currOrder= currentOrder; 
+        setBackground(Color.BLACK); 
+        setPreferredSize(new Dimensions(WIDTH,HEIGHT)); 
         
     }
 
-    public static void drawFractal(Graphics2D g2, int x, int y, int recurs, int angle)
+    public static void drawFractal(Graphics2D g2, int x1, int y1,int x2, int y2, double newAngle)
     {
         if(recurs==branches)
         {
@@ -40,6 +34,26 @@ public class FractalTreePanel extends JPanel
         
         int x1 = (int) Math.round(x - (2 * lengthB * Math.sin(angle)));
         int y1 = (int) Math.round(y - (2 * lengthB * Math.cos(angle)));
+        
+        int x1= (x+x1) /2; 
+        int y1=(y+y1)/2; 
+        
+        int x2=(x1+x)/2; 
+        int y2=(y2+y)/2; 
+        
+        int x3=(x2+x)/2; 
+        int y3= (y2+y)/2; 
+        
+        int x4=(x3+x)/2;
+        int y4=(y3+y)/2; 
+        
+        
+        
+    }
+    
+    public void paintComponent(Graphics2D g2) 
+    {
+        super.paintComponent(g2); 
     }
 
 }
